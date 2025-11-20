@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-    <div class="container mt-3 mb-3" >
-        <header class="d-flex justify-content-center py-3">
+    <div class="container-fluid">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
+            <a href="home_page.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
+                <div class="circulo">
+                    <img src="../img/img_logo.png" alt="Imagem da logo do site" class="imgLogo">
+                </div>
+            </a>
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="home_page.html" class="nav-link active" aria-current="page">Home</a></li>
                 <li class="nav-item"><a href="chamar_guincho.html" class="nav-link">Solicitar Guincho</a></li>
@@ -19,12 +26,9 @@
         </header>
     </div>
 
-     
+
     <section id="logar" class="form-box">
-        
-        <div class="circulo">
-            <img src="img/img_logo.png" alt="Imagem da logo do site" class="imgLogo">
-        </div>
+
         <div id="login">
             <h2>Entrar:</h2>
             <form action="">
@@ -34,7 +38,7 @@
                 <input type="password" name="senha" class="input">
                 <input type="submit" name="btEntrar" value="Entrar" class="btn">
             </form>
-        
+
             <p class="register">
                 Ainda não tem sua conta?
                 <a href="criar_conta.html">Criar conta</a>
@@ -42,9 +46,16 @@
         </div>
     </section>
     <hr>
-    <footer class="">
-        <p><strong>© 2025 — Desenvolvido por Gabriel</strong></p>
-        <p>Todos os direitos reservados.</p>
-    </footer>    
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="home_page.html" class="nav-link px-2 bs-light">Home</a></li>
+                <li class="nav-item"><a href="chamar_guincho.html" class="nav-link px-2 bs-light">Solicitar Guincho</a></li>
+                <li class="nav-item"><a href="historico.html" class="nav-link px-2 bs-light">Solicitações anteriores</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 bs-light">About</a></li>
+            </ul>
+            <p class="text-center bs-light">© 2025 — Desenvolvido por Gabriel</p>
+        </footer>
+    </div>
 </body>
 </html>
