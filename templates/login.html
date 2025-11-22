@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
@@ -18,9 +18,10 @@
                 </div>
             </a>
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="home_page.html" class="nav-link active" aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="chamar_guincho.html" class="nav-link">Solicitar Guincho</a></li>
-                <li class="nav-item"><a href="historico.html" class="nav-link ">Solicitar anteriores</a></li>
+                <li class="nav-item"><a href="home_page" class="nav-link " aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="chamar_guincho" class="nav-link">Solicitar Guincho</a></li>
+                <li class="nav-item"><a href="historico" class="nav-link ">Solicitar anteriores</a></li>
+                <li class="nav-item"><a href="login" class="nav-link active">Login</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Perfil</a></li>
             </ul>
         </header>
@@ -31,11 +32,11 @@
 
         <div id="login">
             <h2>Entrar:</h2>
-            <form action="">
-                <label for="email">Email:</label>
-                <input type="text" name="email" class="input">
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" class="input">
+            <form action="login" method="post">
+                <label >Email:</label>
+                <input type="text" name="login" class="input" placeholder="login">
+                <label >Senha:</label>
+                <input type="password" name="senha" class="input" placeholder="senha">
                 <input type="submit" name="btEntrar" value="Entrar" class="btn">
             </form>
 
