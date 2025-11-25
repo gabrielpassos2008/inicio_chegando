@@ -12,6 +12,14 @@ def get_home():
 def get_login():
     return fk.render_template('login.html')
 
+@srv.get('/chamar_guincho')
+def get_chamar_guinho():
+    return fk.render_template('chamar_guincho.html')
+
+@srv.get('/historico')
+def get_historico():
+    return fk.render_template('historico.html')
+
 @srv.post('/login')
 def valida_login():
     login = fk.request.form['login']
@@ -22,6 +30,11 @@ def valida_login():
     else:
         return fk.redirect('login')
     
+
+@srv.get('/sair')
+def get_sair():
+    del fk.session['login']
+    return fk.redirect('/')
 
 if __name__ == '__main__':
     srv.run(host='localhost',port=5050,debug=True)
