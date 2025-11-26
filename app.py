@@ -6,19 +6,19 @@ srv.secret_key = token_hex()
 
 @srv.get('/')
 def get_home():
-    return fk.render_template('home_page.html')
+    return fk.render_template('home_page.html', rota_atual='/')
 
 @srv.get('/login')
 def get_login():
-    return fk.render_template('login.html')
+    return fk.render_template('login.html', rota_atual='/login')
 
 @srv.get('/chamar_guincho')
 def get_chamar_guinho():
-    return fk.render_template('chamar_guincho.html')
+    return fk.render_template('chamar_guincho.html', rota_atual='/chamar_guincho')
 
 @srv.get('/historico')
 def get_historico():
-    return fk.render_template('historico.html')
+    return fk.render_template('historico.html', rota_atual="/historico")
 
 @srv.post('/login')
 def valida_login():
