@@ -102,7 +102,22 @@ h1{
 #card{
     margin-bottom: 10px;
 }
+.btUniversal{
+    background-color: #79d5e0;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
 
-
+.btUniversal:hover {
+    opacity: 0.85;
+}
 
       

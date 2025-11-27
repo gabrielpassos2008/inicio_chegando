@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%include "metadados.html"%}
     <title>Document</title>
 </head>
 <body>
-    
+    {%include "menu.html"%}
+    <h1>Perfil:</h1>
+    <section id="logar" class="form-box">
+        <div id="login">
+            <form action="" method="post">
+                <label for="email">Nome:</label>
+                <input type="text" name="nome" class="input" value="Gabriel">
+                <label for="senha">Email:</label>
+                <input type="text" name="email" class="input" value="gabriel123@gmail.com">
+                <label for="senha">Telefone:</label>                        
+                <input type="text" name="telefone" class="input" value="995.362.777">             
+                <label for="senha">Data de nascimento:</label>                        
+                <input type="text" name="telefone" class="input" value="10/02/2009">
+                <hr>                
+            </form>
+                        
+            <a href="">
+                <button class="btUniversal" >Virar prestador</button> 
+            </a>  
+            <a href="/sair">
+                <button class="btUniversal">Sair</button>
+            </a>
+                 
+        </div>
+    </section>
+    {%include "rodape.html" %}
 </body>
 </html>

@@ -20,6 +20,11 @@ def get_chamar_guinho():
 def get_historico():
     return fk.render_template('historico.html', rota_atual="/historico")
 
+@srv.get('/perfil')
+def get_perfil():
+    return fk.render_template('perfil.html', rota_atual="/perfil")
+
+
 @srv.post('/login')
 def valida_login():
     login = fk.request.form['login']
@@ -30,11 +35,13 @@ def valida_login():
     else:
         return fk.redirect('login')
     
-
 @srv.get('/sair')
 def get_sair():
-    del fk.session['login']
-    return fk.redirect('/')
+    try:
+        del fk.session['login']
+        return fk.redirect('/')
+    except KeyError:
+        return fk.redirect('/')
 
 if __name__ == '__main__':
     srv.run(host='localhost',port=5050,debug=True)
