@@ -12,6 +12,10 @@ def get_home():
 def get_login():
     return fk.render_template('login.html', rota_atual='/login')
 
+@srv.get('/criar_conta')
+def get_criar_conta():
+    return fk.render_template('criar_conta.html', rota_atual='/login')
+
 @srv.get('/chamar_guincho')
 def get_chamar_guinho():
     return fk.render_template('chamar_guincho.html', rota_atual='/chamar_guincho')
