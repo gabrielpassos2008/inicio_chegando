@@ -1,5 +1,6 @@
 import flask as fk
 from secrets import token_hex
+import model
 
 srv = fk.Flask(__name__)
 srv.secret_key = token_hex()
@@ -14,6 +15,10 @@ def get_login():
 
 @srv.get('/criar_conta')
 def get_criar_conta():
+    nome = fk.request.form['nome']
+    email = fk.request.form['email']
+    senha = fk.request.form['senha']
+    model.cadastrar_usuario(nome,email,senha)
     return fk.render_template('criar_conta.html', rota_atual='/login')
 
 @srv.get('/chamar_guincho')
