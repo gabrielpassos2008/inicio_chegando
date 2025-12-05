@@ -10,19 +10,19 @@
     <section id="logar" class="form-box">
         <div id="login">
             <h2>Crie sua conta:</h2>
-            <form action="login" method="post">
+            <form action="/criar_conta" method="post">
                 <label >Nome:</label>
                 <input type="text" name="nome" class="input" placeholder="Nome">
                 <label >Email:</label>
                 <input type="text" name="email" class="input" placeholder="login">
                 <label >Senha:</label>
-                <input type="password" name="senha" class="input" placeholder="senha">
+                <input type="text" name="senha" class="input" placeholder="login">
+                <label >Telefone:</label>
+                <input type="password" name="telefone" class="input" placeholder="telefone">
                 <input type="submit" name="btEntrar" value="Criar" class="btn">
             </form>
         </div>
     </section>
-
-
     {%include "rodape.html"%}
 </body>
 </html>
