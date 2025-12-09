@@ -14,6 +14,8 @@ def criar_tab_usarios(conn):
         nome TEXT NOT NULL,
         email TEXT NOT NULL,
         senha TEXT NOT  NULL,
+        data_nascimento DATE NOT NULL,
+        telefone TEXT,
         tipo INT DEFAULT 0
     );
     ''')

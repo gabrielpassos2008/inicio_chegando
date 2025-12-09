@@ -3736,7 +3736,7 @@ textarea.form-control-lg {
   --bs-nav-link-padding-y: 0.5rem;
   --bs-nav-link-font-weight: ;
   --bs-nav-link-color: rgb(240, 240, 240);
-  --bs-nav-link-hover-color: #143436;
+  --bs-nav-link-hover-color: #79d5e0;
   --bs-nav-link-disabled-color: var(--bs-secondary-color);
   display: flex;
   flex-wrap: wrap;
@@ -3809,7 +3809,7 @@ textarea.form-control-lg {
 .nav-pills {
   --bs-nav-pills-border-radius: var(--bs-border-radius);
   --bs-nav-pills-link-active-color: #fff;
-  --bs-nav-pills-link-active-bg: #143436;
+  --bs-nav-pills-link-active-bg: #79d5e0;
 }
 .nav-pills .nav-link {
   border-radius: var(--bs-nav-pills-border-radius);
