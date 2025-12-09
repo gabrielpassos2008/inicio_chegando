@@ -37,6 +37,10 @@ def get_historico():
 def get_perfil():
     return fk.render_template('perfil.html', rota_atual="/perfil")
 
+@srv.post('/perfil')
+def post_perfil():
+        valor = model.dados_perfil(fk.session['login'])        
+        return valor
 
 @srv.post('/login')
 def valida_login():
