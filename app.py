@@ -13,14 +13,6 @@ def get_home():
 def get_login():
     return fk.render_template('login.html', rota_atual='/login')
 
-@srv.post('/criar_conta')
-def post_criar_conta():
-    nome = fk.request.form['nome']
-    email = fk.request.form['email']
-    senha = fk.request.form['senha']
-    model.cadastrar_usuario(nome,email,senha)
-    return fk.redirect("/login")
-
 @srv.get('/criar_conta')
 def get_criar_conta():
     return fk.render_template('criar_conta.html', rota_atual='/login')
@@ -37,18 +29,28 @@ def get_historico():
 def get_perfil():
     return fk.render_template('perfil.html', rota_atual="/perfil")
 
+@srv.post('/criar_conta')
+def post_criar_conta():
+    nome = fk.request.form['nome']
+    email = fk.request.form['email']
+    senha = fk.request.form['senha']
+    telefone = fk.request.form['telefone']
+    data_nascimento = fk.request.form['data_nascimento']
+    model.cadastrar_usuario(nome,email,senha,telefone,data_nascimento)
+    return fk.redirect("/login")
+
 @srv.post('/perfil')
 def post_perfil():
-        valor = model.dados_perfil(fk.session['login'])        
+        valor = model.dados_perfil(fk.session['email'])        
         return valor
 
 @srv.post('/login')
 def valida_login():
-    login = fk.request.form['email']
+    email = fk.request.form['email']
     senha = fk.request.form['senha']
-    valor =  model.pesquisar_login(login,senha)
+    valor =  model.pesquisar_login(email,senha)
     if valor:
-        fk.session['login'] = login
+        fk.session['email'] = email
         return fk.redirect('/')
     else:
         return fk.redirect('login')
@@ -56,7 +58,7 @@ def valida_login():
 @srv.get('/sair')
 def get_sair():
     try:
-        del fk.session['login']
+        del fk.session['email']
         return fk.redirect('/')
     except KeyError:
         return fk.redirect('/')
