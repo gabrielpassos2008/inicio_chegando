@@ -8,14 +8,16 @@
     {%include "componentes/menu.html"%}
     <h1>Perfil:</h1>
     <section id="logar" class="form-box">
-        <h2>Nome:</h2>
-        <p>Gabriel</p>
-        <h2>Email</h2>
-        <p>gabriel123@gmail.com</p>
-        <h2>Telefone</h2>                       
-        <p>995.362.777</p>             
-        <h2>Data de nascimento</h2>                        
-        <p>10/02/2009</p>
+        {% for nome,email,data_nascimento,telefone in informacao %}
+            <h2>Nome:</h2>
+            <p>{{nome}}</p>
+            <h2>Email</h2>
+            <p>{{email}}</p>
+            <h2>Telefone</h2>                       
+            <p>{{telefone}}</p>             
+            <h2>Data de nascimento</h2>                        
+            <p>{{data_nascimento}}</p>
+        {% endfor %}
         <hr>                
         <a href="">
             <button class="btUniversal" >Virar prestador</button> 

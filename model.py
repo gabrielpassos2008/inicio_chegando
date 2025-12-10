@@ -22,18 +22,16 @@ def pesquisar_login(login,senha):
         else:
             return False
         
-def dados_perfil(login,senha):
+def dados_perfil(login):
     with sqlite3.connect('banco_chegando_pi.db') as conn:
         cursor = conn.cursor()
         sql_dados_perfil = ('''
         SELECT nome,email,data_nascimento,telefone
         FROM usuarios
-        where email = ? AND senha = ?
+        where email = ?
         ''')
-        valor = cursor.execute(sql_dados_perfil,(login,senha))
+        valor = cursor.execute(sql_dados_perfil,(login,))
         valor = cursor.fetchall()
         return valor 
-
-
 
 

@@ -27,7 +27,8 @@ def get_historico():
 
 @srv.get('/perfil')
 def get_perfil():
-    return fk.render_template('perfil.html', rota_atual="/perfil")
+    valor = model.dados_perfil(fk.session['email'])
+    return fk.render_template('perfil.html', informacao = valor ,rota_atual="/perfil")
 
 @srv.post('/criar_conta')
 def post_criar_conta():
@@ -39,10 +40,10 @@ def post_criar_conta():
     model.cadastrar_usuario(nome,email,senha,telefone,data_nascimento)
     return fk.redirect("/login")
 
-@srv.post('/perfil')
-def post_perfil():
-        valor = model.dados_perfil(fk.session['email'])        
-        return valor
+# @srv.post('/perfil')
+# def post_perfil():
+#         valor = model.dados_perfil(fk.session['email'])        
+#         return valor
 
 @srv.post('/login')
 def valida_login():
