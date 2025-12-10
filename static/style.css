@@ -2,18 +2,20 @@
 .form-box {
     background-color: #143436;
     padding: 30px;
+    padding-bottom: 10px;
     width: 320px;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 7px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.774);
     color: white;
 
 }
 
     /* Título */
-.form-box h2 {
+.form-box .form-titulo {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 600;
+    font-size: 25px;
 }
 
     /* Labels */
@@ -22,12 +24,28 @@
     margin-bottom: 5px;
     display: block;
 }
+    /* subtitulo */
+.form-box h2{
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    margin-bottom: 8px;
+}
+.form-box p{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    font-size: 14px;
+    background-color: rgb(255, 255, 255);
+    color: #2e2e2e;
+}
 
     /* Inputs */
 .form-box input {
     width: 100%;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 7px;
     border: none;
     outline: none;
     margin-bottom: 15px;
@@ -39,7 +57,7 @@
     background-color: #79d5e0;
     border: none;
     padding: 10px 15px;
-    border-radius: 20px;
+    border-radius: 7px;
     cursor: pointer;
     font-size: 14px;
 }
@@ -50,9 +68,11 @@
 
     /* Link Criar conta */
 .form-box .register {
-    margin-top: 40px;
+    margin-top: 5px;
     text-align: center;
     font-size: 14px;
+    background-color: #143436;
+    color: white;
 }
 
 .form-box .register a {
@@ -106,7 +126,7 @@ h1{
     background-color: #79d5e0;
     border: none;
     padding: 10px 15px;
-    border-radius: 20px;
+    border-radius: 7px;
     cursor: pointer;
     font-size: 14px;
     width: 100%;
@@ -119,6 +139,5 @@ h1{
 .btUniversal:hover {
     opacity: 0.85;
 }
-
 
       
