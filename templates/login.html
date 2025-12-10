@@ -2,29 +2,27 @@
 <html lang="en">
 
 <head>
-    {%include "metadados.html"%}
+    {%include "componentes/metadados.html"%}
     <title>Document</title>
 </head>
 
 <body>
-    {%include "menu.html"%}
+    {%include "componentes/menu.html"%}
     <section id="logar" class="form-box">
-        <div id="login">
-            <h2>Entrar:</h2>
-            <form action="login" method="post">
-                <label >Email:</label>
-                <input type="text" name="email" class="input" placeholder="Email">
-                <label >Senha:</label>
-                <input type="password" name="senha" class="input" placeholder="senha">
-                <input type="submit" name="btEntrar" value="Entrar" class="btn">
-            </form>
-            <p class="register">
-                Ainda não tem sua conta?
-                <a href="criar_conta">Criar conta</a>
-            </p>
-        </div>
+        <h1 class="form-titulo">Entrar</h1>
+        <form action="login" method="post">
+            <label >Email:</label>
+            <input type="text" name="email" class="input" placeholder="Email">
+            <label >Senha:</label>
+            <input type="password" name="senha" class="input" placeholder="senha">
+            <input type="submit" name="btEntrar" value="Entrar" class="btn">
+        </form>
+        <p class="register">
+            Ainda não tem sua conta?
+            <a href="criar_conta">Criar conta</a>
+        </p>
     </section>
     <hr>
-    {%include "rodape.html"%}
+    {%include "componentes/rodape.html"%}
 </body>
 </html>

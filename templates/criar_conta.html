@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {%include "metadados.html"%}
+    {%include "componentes/metadados.html"%}
     <title>Document</title>
 </head>
 <body>
-    {%include "menu.html"%}   
+    {%include "componentes/menu.html"%}   
     
     <section id="logar" class="form-box">
-        <div id="login">
-            <h2>Crie sua conta:</h2>
-            <form action="/criar_conta" method="post">
-                <label >Nome:</label>
-                <input type="text" name="nome" class="input" placeholder="Nome">
-                <label >Email:</label>
-                <input type="text" name="email" class="input" placeholder="login">
-                <label >Senha:</label>
-                <input type="password" name="senha" class="input" placeholder="login">
-                <label >Telefone:</label>
-                <input type="text" name="telefone" class="input" placeholder="telefone">
-                <label >Data de nascimento:</label>
-                <input type="text" name="data_nascimento" class="input" placeholder="data de nascimento">
-                <input type="submit" name="btEntrar" value="Criar" class="btn">
-            </form>
-        </div>
+        <h1 class="form-titulo">Crie sua conta:</h1>
+        <form action="/criar_conta" method="post">
+            <label >Nome:</label>
+            <input type="text" name="nome" class="input" placeholder="Nome">
+            <label >Email:</label>
+            <input type="text" name="email" class="input" placeholder="login">
+            <label >Senha:</label>
+            <input type="password" name="senha" class="input" placeholder="login">
+            <label >Telefone:</label>
+            <input type="text" name="telefone" class="input" placeholder="telefone">
+            <label >Data de nascimento:</label>
+            <input type="text" name="data_nascimento" class="input" placeholder="data de nascimento">
+            <input type="submit" name="btEntrar" value="Criar" class="btn">
+        </form>
     </section>
-    {%include "rodape.html"%}
+    {%include "componentes/rodape.html"%}
 </body>
 </html>

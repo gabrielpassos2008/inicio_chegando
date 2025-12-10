@@ -2,30 +2,28 @@
 <html lang="en">
 
 <head>
-    {%include "metadados.html"%}
+    {%include "componentes/metadados.html"%}
     <title>Document</title>
 </head>
 
 <body>
 
-    {%include "menu.html"%}
+    {%include "componentes/menu.html"%}
     <h1>Faça seu pedido:</h1>
     <section id="logar" class="form-box">
-        <div id="login">
-            <form action="">
-                <label for="email">Placa:</label>
-                <input type="text" name="placa" class="input" value="">
-                <label for="senha">Endereço:</label>
-                <input type="text" name="endereco" class="input">
-                <label for="senha">Numero:</label>
-                <input type="text" name="numeroEdereço" class="input">
-                <hr>
-                <input type="submit" name="btFinalizar" value="Finalizar" class="btn">
-            </form>
-        </div>
+        <form action="">
+            <label for="email">Placa:</label>
+            <input type="text" name="placa" class="input" value="">
+            <label for="senha">Endereço:</label>
+            <input type="text" name="endereco" class="input">
+            <label for="senha">Numero:</label>
+            <input type="text" name="numeroEdereço" class="input">
+            <hr>
+            <input type="submit" name="btFinalizar" value="Finalizar" class="btn">
+        </form>
     </section>
 
-    {%include "rodape.html" %}
+    {%include "componentes/rodape.html" %}
 </body>
 
 </html>
