@@ -2,51 +2,42 @@
 <html lang="en">
 
 <head>
-    {%include "metadados.html"%}
+    {%include "componentes/metadados.html"%}
     <title>Document</title>
 </head>
 
 <body>
-    {%include "menu.html"%}
+    {%include "componentes/menu.html"%}
     <h1>Solicitações anteriores:</h1>
     <div class="row">
         <div class="col">
-            <section id="logar" class="form-box">
-                <div id="login">
-                    <h2>Data 20/10/2011:</h2>
-                    <form action="">
-                        <label for="email">Placa:</label>
-                        <input type="text" name="email" class="input" value="ivz-1202">
-                        <label for="senha">Endereço:</label>
-                        <input type="text" name="senha" class="input" value="Rua Bento">
-                        <label for="senha">Numero:</label>
-                        
-                        <input type="text" name="numeroEdereço" class="input" value="2344">
-                        <hr>
-                        <input type="submit" name="btFinalizar" value="Detalhes" class="btn">                        
-                    </form>
-                </div>
+            <section class="form-box">
+                <h1 class="form-titulo">Data: 02/03/2021</h1>
+                <h2>Email</h2>
+                <p>iya-2324</p>
+                <h2>Endereço</h2>
+                <p>rua tal</p>
+                <h2>Numero</h2>
+                <p>3224</p>
+                <hr>
+                <input type="submit" name="btDetalhes" value="Detalhes" class="btn">
             </section>
         </div>
         <div class="col">
-            <section id="logar" class="form-box">
-                <div id="login">
-                    <h2>Data 02/03/2021:</h2>
-                    <form action="">
-                        <label for="email">Placa:</label>
-                        <input type="text" name="email" class="input" value="iya-2324">
-                        <label for="senha">Endereço:</label>
-                        <input type="text" name="senha" class="input" value="Rua Principal">
-                        <label for="senha">Numero:</label>
-                        <input type="text" name="numeroEdereço" class="input" value="3214">
-                        <hr>
-                        <input type="submit" name="btFinalizar" value="Detalhes" class="btn">
-                    </form>
-                </div>
+            <section class="form-box">
+                <h1 class="form-titulo">Data: 02/03/2021</h1>
+                <h2>Email</h2>
+                <p>iya-2324</p>
+                <h2>Endereço</h2>
+                <p>rua tal</p>
+                <h2>Numero</h2>
+                <p>3224</p>
+                <hr>
+                <input type="submit" name="btDetalhes" value="Detalhes" class="btn">
             </section>
         </div>
     </div>    
-    {%include "rodape.html" %}
+    {%include "componentes/rodape.html" %}
 </body>
 
 </html>
