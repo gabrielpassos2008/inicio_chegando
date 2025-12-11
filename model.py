@@ -1,13 +1,34 @@
 import sqlite3
-
-def cadastrar_usuario(nome,login,senha,data_nascimento,telefone):
+def verificar_email(email):
     with sqlite3.connect('banco_chegando_pi.db') as conn:
-        sql_cadastrar_usuario = ('''
-        INSERT INTO usuarios (nome,email,senha,data_nascimento,telefone)
-        VALUES(?,?,?,?,?)
+        cursor = conn.cursor()
+        sql_verificar_email = ('''
+        SELECT email
+        FROM usuarios
+        WHERE email = ?
         ''')
-        conn.execute(sql_cadastrar_usuario,(nome,login,senha,data_nascimento,telefone))
-def pesquisar_login(login,senha):
+        cursor.execute(sql_verificar_email,(email,))
+        resultado = cursor.fetchone()
+        if resultado:
+            return True
+        else:
+            return False
+        
+def cadastrar_usuario(nome,email,senha,data_nascimento,telefone):
+    if not verificar_email(email):
+        with sqlite3.connect('banco_chegando_pi.db') as conn:
+            sql_cadastrar_usuario = ('''
+            INSERT INTO usuarios (nome,email,senha,data_nascimento,telefone)
+            VALUES(?,?,?,?,?)
+            ''')
+            conn.execute(sql_cadastrar_usuario,(nome,email,senha,data_nascimento,telefone))
+            print('feito')
+    else:
+        return print('existe email ja ')
+    
+cadastrar_usuario('teste2N','teste2E','teste2S','teste2D','teste2T')
+
+def pesquisar_login(email,senha):
     with sqlite3.connect('banco_chegando_pi.db') as conn:
         cursor = conn.cursor()
         sql_pesquisar_login = ('''
@@ -15,14 +36,14 @@ def pesquisar_login(login,senha):
         FROM usuarios
         WHERE email = ? AND senha = ?
         ''') 
-        valor = cursor.execute(sql_pesquisar_login,(login,senha))
-        valor = cursor.fetchone()
-        if valor:
+        cursor.execute(sql_pesquisar_login,(email,senha))
+        resultado = cursor.fetchone()
+        if resultado:
             return True
         else:
             return False
         
-def dados_perfil(login):
+def dados_perfil(email):
     with sqlite3.connect('banco_chegando_pi.db') as conn:
         cursor = conn.cursor()
         sql_dados_perfil = ('''
@@ -30,8 +51,9 @@ def dados_perfil(login):
         FROM usuarios
         where email = ?
         ''')
-        valor = cursor.execute(sql_dados_perfil,(login,))
-        valor = cursor.fetchall()
-        return valor 
+        cursor.execute(sql_dados_perfil,(email,))
+        resultado = cursor.fetchall()
+        return resultado 
 
 
+        
