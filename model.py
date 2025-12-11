@@ -22,12 +22,10 @@ def cadastrar_usuario(nome,email,senha,data_nascimento,telefone):
             VALUES(?,?,?,?,?)
             ''')
             conn.execute(sql_cadastrar_usuario,(nome,email,senha,data_nascimento,telefone))
-            print('feito')
+            return False
     else:
-        return print('existe email ja ')
+        return True
     
-cadastrar_usuario('teste2N','teste2E','teste2S','teste2D','teste2T')
-
 def pesquisar_login(email,senha):
     with sqlite3.connect('banco_chegando_pi.db') as conn:
         cursor = conn.cursor()

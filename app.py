@@ -13,9 +13,9 @@ def get_home():
 def get_login():
     return fk.render_template('login.html', rota_atual='/login')
 
-@srv.get('/criar_conta')
-def get_criar_conta():
-    return fk.render_template('criar_conta.html', rota_atual='/login')
+@srv.get('/cadastrar_usuario')
+def get_cadastrar_usuario():
+    return fk.render_template('cadastrar_usuario.html', rota_atual='/login')
 
 @srv.get('/chamar_guincho')
 def get_chamar_guinho():
@@ -30,8 +30,8 @@ def get_perfil():
     valor = model.dados_perfil(fk.session['email'])
     return fk.render_template('perfil.html', informacao = valor ,rota_atual="/perfil")
 
-@srv.post('/criar_conta')
-def post_criar_conta():
+@srv.post('/cadastrar_usuario')
+def post_cadastrar_usuario():
     nome = fk.request.form['nome']
     email = fk.request.form['email']
     senha = fk.request.form['senha']
