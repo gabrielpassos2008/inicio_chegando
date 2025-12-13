@@ -30,6 +30,16 @@ def get_perfil():
     valor = model.dados_perfil(fk.session['email'])
     return fk.render_template('perfil.html', informacao = valor ,rota_atual="/perfil")
 
+@srv.post('/chamar_guincho')
+def post_chamar_guincho():
+    placa = fk.request.form['placa']
+    endereco_origem = fk.request.form['endereco_origem']
+    endereco_final = fk.request.form['endereco_final']
+    if not model.cadastrar_pedido_guincho(placa,endereco_origem,endereco_final):
+        return fk.redirect('/home')
+    else:
+        return fk.redirect('/chamar_guincho')
+
 @srv.post('/cadastrar_usuario')
 def post_cadastrar_usuario():
     nome = fk.request.form['nome']
@@ -37,13 +47,12 @@ def post_cadastrar_usuario():
     senha = fk.request.form['senha']
     telefone = fk.request.form['telefone']
     data_nascimento = fk.request.form['data_nascimento']
-    model.cadastrar_usuario(nome,email,senha,telefone,data_nascimento)
-    return fk.redirect("/login")
-
-# @srv.post('/perfil')
-# def post_perfil():
-#         valor = model.dados_perfil(fk.session['email'])        
-#         return valor
+    if not model.verificar_email(email):
+        model.cadastrar_usuario(nome,email,senha,telefone,data_nascimento)
+        return fk.redirect("/login")
+    else:
+        fk.flash("Este e-mail já está cadastrado. Tente outro.")
+        return fk.redirect('/cadastrar_usuario')
 
 @srv.post('/login')
 def valida_login():
@@ -52,6 +61,7 @@ def valida_login():
     valor =  model.pesquisar_login(email,senha)
     if valor:
         fk.session['email'] = email
+        fk.session['id'] = valor[0]
         return fk.redirect('/')
     else:
         return fk.redirect('login')
@@ -63,6 +73,11 @@ def get_sair():
         return fk.redirect('/')
     except KeyError:
         return fk.redirect('/')
+
+# @srv.post('/perfil')
+# def post_perfil():
+#         valor = model.dados_perfil(fk.session['email'])        
+#         return valor
 
 if __name__ == '__main__':
     srv.run(host='localhost',port=5050,debug=True)
