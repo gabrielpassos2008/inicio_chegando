@@ -10,14 +10,14 @@
 
     {%include "componentes/menu.html"%}
     <h1>Faça seu pedido:</h1>
-    <section id="logar" class="form-box">
-        <form action="">
-            <label for="email">Placa:</label>
-            <input type="text" name="placa" class="input" value="">
-            <label for="senha">Endereço:</label>
-            <input type="text" name="endereco" class="input">
-            <label for="senha">Numero:</label>
-            <input type="text" name="numeroEdereço" class="input">
+    <section class="form-box">
+        <form action="/chamar_guincho" method="post">
+            <label >Placa:</label>
+            <input type="text" name="placa" class="input" placeholder="Placa do carro">
+            <label >Endereço de Origem:</label>
+            <input type="text" name="endereco_origem" class="input" placeholder="Endereço completo">
+            <label >Endereço Final:</label>
+            <input type="text" name="endereco_final" class="input"  placeholder="Endereço completo">
             <hr>
             <input type="submit" name="btFinalizar" value="Finalizar" class="btn">
         </form>

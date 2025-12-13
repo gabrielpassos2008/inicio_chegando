@@ -35,8 +35,9 @@ def post_chamar_guincho():
     placa = fk.request.form['placa']
     endereco_origem = fk.request.form['endereco_origem']
     endereco_final = fk.request.form['endereco_final']
-    if not model.cadastrar_pedido_guincho(placa,endereco_origem,endereco_final):
-        return fk.redirect('/home')
+    id_usuarios = fk.session['id']
+    if not model.cadastrar_pedido_guincho(placa,endereco_origem,endereco_final,id_usuarios[0]):
+        return fk.redirect('/')
     else:
         return fk.redirect('/chamar_guincho')
 
@@ -61,7 +62,7 @@ def valida_login():
     valor =  model.pesquisar_login(email,senha)
     if valor:
         fk.session['email'] = email
-        fk.session['id'] = valor[0]
+        fk.session['id'] = valor
         return fk.redirect('/')
     else:
         return fk.redirect('login')

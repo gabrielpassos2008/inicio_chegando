@@ -24,15 +24,14 @@ def cadastrar_usuario(nome,email,senha,data_nascimento,telefone):
         conn.execute(sql_cadastrar_usuario,(nome,email,senha,data_nascimento,telefone))
         return True
 
-def cadastrar_pedido_guincho(placa,endereco_origem,endereco_final):
+def cadastrar_pedido_guincho(placa,endereco_origem,endereco_final,id_usuarios):
     with sqlite3.connect('banco_chegando_pi.db') as conn:
         data = datetime.now()
         sql_cadastrar_pedido  = ('''
-        INSERT INTO solicitacao_de_guincho (placa_carro,local_de_origem,local_de_destino,data_hora)
-        VALUES(?,?,?,?)
+        INSERT INTO solicitacao_de_guincho (placa_carro,local_de_origem,local_de_destino,data_hora,id_usuarios)
+        VALUES(?,?,?,?,?)
         ''')
-        conn.execute(sql_cadastrar_pedido,(placa,endereco_origem,endereco_final,data))
-        return True
+        conn.execute(sql_cadastrar_pedido,(placa,endereco_origem,endereco_final,data,id_usuarios))
     
 def pesquisar_login(email,senha):
     with sqlite3.connect('banco_chegando_pi.db') as conn:
