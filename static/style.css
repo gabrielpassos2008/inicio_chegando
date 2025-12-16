@@ -100,6 +100,7 @@
     display: flex;  
 }
 
+
 body{
     display: flex;
     flex-direction: column;
@@ -139,4 +140,26 @@ h1{
     opacity: 0.85;
 }
 
-      
+ 
+.scrollbar {
+    display: flex;               /* troca grid por flex (mais simples) */
+    gap: 16px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    padding-bottom: 10px;
+}
+
+.scrollbar > * {
+    min-width: calc(33.333% - 16px); /* força 3 cards */
+    scroll-snap-align: start;
+}
+
+.scrollbar ::-webkit-scrollbar {
+    height: 6px;
+}
+.scrollbar ::-webkit-scrollbar-thumb {
+    background: #3a3a3a;
+}
+

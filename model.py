@@ -45,8 +45,6 @@ def pesquisar_login(email,senha):
         resultado = cursor.fetchone()
         return resultado
     
-
-print(pesquisar_login('123@gmail','123'))
 def dados_perfil(email):
     with sqlite3.connect('banco_chegando_pi.db') as conn:
         cursor = conn.cursor()

@@ -2,16 +2,18 @@
 <html lang="en">
 
 <head>
-    {%include "componentes/metadados.html"%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <link rel="stylesheet" href="/static/style.css">
     <title>Document</title>
 </head>
 
 <body>
     {%include "componentes/menu.html"%}
     <h1>Solicitações anteriores:</h1>
-    <div class="teste">
-        <div class="row">
-            <div class="col">
+    <div class="scrollbar">
                 <section class="form-box">
                     <h1 class="form-titulo">Data: 02/03/2021</h1>
                     <h2>Email</h2>
@@ -23,8 +25,6 @@
                     <hr>
                     <input type="submit" name="btDetalhes" value="Detalhes" class="btn">
                 </section>
-            </div>
-            <div class="col">
                 <section class="form-box">
                     <h1 class="form-titulo">Data: 02/03/2021</h1>
                     <h2>Email</h2>
@@ -36,8 +36,6 @@
                     <hr>
                     <input type="submit" name="btDetalhes" value="Detalhes" class="btn">
                 </section>
-            </div>
-            <div class="col">
                 <section class="form-box">
                     <h1 class="form-titulo">Data: 02/03/2021</h1>
                     <h2>Email</h2>
@@ -49,8 +47,17 @@
                     <hr>
                     <input type="submit" name="btDetalhes" value="Detalhes" class="btn">
                 </section>
-            </div>
-        </div>
+                <section class="form-box">
+                    <h1 class="form-titulo">Data: 02/03/2021</h1>
+                    <h2>Email</h2>
+                    <p>iya-2324</p>
+                    <h2>Endereço</h2>
+                    <p>rua tal</p>
+                    <h2>Numero</h2>
+                    <p>3224</p>
+                    <hr>
+                    <input type="submit" name="btDetalhes" value="Detalhes" class="btn">
+                </section>
     </div>    
     {%include "componentes/rodape.html" %}
 </body>
