@@ -57,5 +57,16 @@ def dados_perfil(email):
         resultado = cursor.fetchall()
         return resultado 
 
+def solicitacoes_anteriores(id):
+    with sqlite3.connect('banco_chegando_pi.db') as conn:
+        cursor = conn.cursor()
+        sql_solicitacoes_anteriores = ('''  
+        SELECT placa_carro, local_de_origem, local_de_destino, status, data_hora
+        FROM solicitacao_de_guincho
+        WHERE id_usuarios = ?
+        ''')
+        cursor.execute(sql_solicitacoes_anteriores,(id,))
+        resultado = cursor.fetchall()
+        return resultado
+    
 
-        

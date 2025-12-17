@@ -75,10 +75,5 @@ def get_sair():
     except KeyError:
         return fk.redirect('/')
 
-# @srv.post('/perfil')
-# def post_perfil():
-#         valor = model.dados_perfil(fk.session['email'])        
-#         return valor
-
 if __name__ == '__main__':
     srv.run(host='localhost',port=5050,debug=True)
