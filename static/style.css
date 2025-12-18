@@ -140,26 +140,30 @@ h1{
     opacity: 0.85;
 }
 
- 
+/* ===== CONTAINER DO SCROLL ===== */
 .scrollbar {
-    display: flex;               /* troca grid por flex (mais simples) */
-    gap: 16px;
+    display: flex;
+    gap: 40px;
+
+    width: 80%;
+    margin: auto;
 
     overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 20px 10px 10px;
+
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 
-    padding-bottom: 10px;
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color:  #79d5e0 #2e2e2e;
 }
 
-.scrollbar > * {
-    min-width: calc(33.333% - 16px); /* força 3 cards */
+/* ===== ESSENCIAL PARA OS CARDS ===== */
+.scrollbar > .form-box {
+    flex: 0 0 auto;
     scroll-snap-align: start;
-}
-
-.scrollbar ::-webkit-scrollbar {
-    height: 6px;
-}
-.scrollbar ::-webkit-scrollbar-thumb {
-    background: #3a3a3a;
 }
 
