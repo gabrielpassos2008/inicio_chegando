@@ -143,6 +143,7 @@ h1{
 /* ===== CONTAINER DO SCROLL ===== */
 .scrollbar {
     display: flex;
+    
     gap: 40px;
 
     width: 80%;
@@ -165,5 +166,10 @@ h1{
 .scrollbar > .form-box {
     flex: 0 0 auto;
     scroll-snap-align: start;
+}
+
+.scrollbar:has(> .form-box:only-child),
+.scrollbar:has(> .form-box:nth-child(2):last-child) {
+    justify-content: center;
 }
 
