@@ -10,18 +10,23 @@
     {%include "componentes/menu.html"%}
     <h1>Solicitações anteriores:</h1>
     <div class="scrollbar">
-        {% for id,placa_carro, local_de_origem, local_de_destino, status, data_hora in informacao%}
+        {% for id,placa_carro, local_de_origem, local_de_destino, status, data, hora in informacao%}
             <section class="form-box">
-                <h1 class="form-titulo">Data: {{data_hora}}</h1>
                 <h2>Placa</h2>
                 <p>{{placa_carro}}</p>
                 <h2>Endereço de origem</h2>
                 <p>{{local_de_origem}}</p>
                 <h2>Endereço de destino</h2>
                 <p>{{local_de_destino}}</p>
+                <h2>Protocolo</h2>
+                <p>{{id}}</p>
+                <h2>Data</h2>
+                <p>{{data}}</p>
+                <h2>Horas</h2>
+                <p>{{hora}}</p>
                 <hr>
-                <a href="/detalhes/{{id}}">
-                    <button class="btUniversal">Detalhes</button>
+                <a href="/">
+                    <button class="btUniversal">Voltar</button>
                 </a>
             </section>
         {%endfor%}

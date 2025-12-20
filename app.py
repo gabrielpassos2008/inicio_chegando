@@ -23,8 +23,13 @@ def get_chamar_guinho():
 
 @srv.get('/historico')
 def get_historico():
-    return fk.render_template('historico.html', rota_atual="/historico")
+    valor = model.solicitacoes_anteriores(fk.session['id'])
+    return fk.render_template('historico.html', informacao = valor , rota_atual="/historico")
 
+@srv.get('/detalhes/<id>')
+def get_detalhes_id(id):
+    valor = model.solicitacoes_anteriores_datalhadas(id)
+    return fk.render_template('historico_detalhado.html', informacao = valor, rota_atual = "/historico")
 @srv.get('/perfil')
 def get_perfil():
     valor = model.dados_perfil(fk.session['email'])
@@ -36,7 +41,7 @@ def post_chamar_guincho():
     endereco_origem = fk.request.form['endereco_origem']
     endereco_final = fk.request.form['endereco_final']
     id_usuarios = fk.session['id']
-    if not model.cadastrar_pedido_guincho(placa,endereco_origem,endereco_final,id_usuarios[0]):
+    if not model.cadastrar_pedido_guincho(placa,endereco_origem,endereco_final,id_usuarios):
         return fk.redirect('/')
     else:
         return fk.redirect('/chamar_guincho')
@@ -59,10 +64,10 @@ def post_cadastrar_usuario():
 def valida_login():
     email = fk.request.form['email']
     senha = fk.request.form['senha']
-    valor =  model.pesquisar_login(email,senha)
-    if valor:
+    id =  model.pesquisar_login(email,senha)
+    if id:
         fk.session['email'] = email
-        fk.session['id'] = valor
+        fk.session['id'] = id
         return fk.redirect('/')
     else:
         return fk.redirect('login')
@@ -70,6 +75,7 @@ def valida_login():
 @srv.get('/sair')
 def get_sair():
     try:
+        del fk.session['id']
         del fk.session['email']
         return fk.redirect('/')
     except KeyError:

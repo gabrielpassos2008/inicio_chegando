@@ -43,7 +43,7 @@ def pesquisar_login(email,senha):
         ''') 
         cursor.execute(sql_pesquisar_login,(email,senha))
         resultado = cursor.fetchone()
-        return resultado
+        return resultado[0] if resultado else None
     
 def dados_perfil(email):
     with sqlite3.connect('banco_chegando_pi.db') as conn:
@@ -61,7 +61,7 @@ def solicitacoes_anteriores(id):
     with sqlite3.connect('banco_chegando_pi.db') as conn:
         cursor = conn.cursor()
         sql_solicitacoes_anteriores = ('''  
-        SELECT placa_carro, local_de_origem, local_de_destino, status, data_hora
+        SELECT id,placa_carro, local_de_origem, local_de_destino, status, DATE(data_hora) AS data
         FROM solicitacao_de_guincho
         WHERE id_usuarios = ?
         ''')
@@ -69,4 +69,16 @@ def solicitacoes_anteriores(id):
         resultado = cursor.fetchall()
         return resultado
     
-
+def solicitacoes_anteriores_datalhadas(id):
+    with sqlite3.connect('banco_chegando_pi.db') as conn:
+        cursor = conn.cursor()
+        sql_solicitacoes_anteriores = ('''  
+        SELECT id,placa_carro, local_de_origem, local_de_destino, status, 
+        DATE(data_hora) AS data,
+        TIME(data_hora) AS hora
+        FROM solicitacao_de_guincho
+        WHERE id = ?
+        ''')
+        cursor.execute(sql_solicitacoes_anteriores,(id,))
+        resultado = cursor.fetchallq()
+        return resultado
