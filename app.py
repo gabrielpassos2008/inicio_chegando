@@ -70,6 +70,7 @@ def valida_login():
         fk.session['id'] = id
         return fk.redirect('/')
     else:
+        fk.flash("E-mail ou senha incorretos. Verifique os dados e tente novamente.")
         return fk.redirect('login')
     
 @srv.get('/sair')
