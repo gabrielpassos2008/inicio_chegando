@@ -144,10 +144,12 @@ h1{
 .scrollbar {
     display: flex;
     
-    gap: 40px;
+    gap: 40px;  
 
     width: 80%;
     margin: auto;
+    
+    justify-content: center;
 
     overflow-x: auto;
     overflow-y: hidden;
@@ -172,4 +174,5 @@ h1{
 .scrollbar:has(> .form-box:nth-child(2):last-child) {
     justify-content: center;
 }
+
 
