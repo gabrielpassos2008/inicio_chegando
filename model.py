@@ -80,5 +80,5 @@ def solicitacoes_anteriores_datalhadas(id):
         WHERE id = ?
         ''')
         cursor.execute(sql_solicitacoes_anteriores,(id,))
-        resultado = cursor.fetchallq()
+        resultado = cursor.fetchall()
         return resultado
