@@ -149,7 +149,7 @@ h1{
     width: 80%;
     margin: auto;
     
-    justify-content: center;
+ 
 
     overflow-x: auto;
     overflow-y: hidden;
@@ -168,6 +168,7 @@ h1{
 .scrollbar > .form-box {
     flex: 0 0 auto;
     scroll-snap-align: start;
+    justify-content: center;
 }
 
 .scrollbar:has(> .form-box:only-child),
